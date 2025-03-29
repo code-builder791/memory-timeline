@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Memory Timeline ❤️</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Our Memory Timeline ❤️</h1>
+
+    <!-- Form to Add New Event -->
+    <form id="event-form">
+      <input type="text" id="event-title" placeholder="Event Title" required />
+      <input type="date" id="event-date" required />
+      <textarea id="event-description" placeholder="Description" required></textarea>
+      <input type="file" id="event-image" accept="image/*" required />
+      <button type="submit">Add Event</button>
+    </form>
+
+    <!-- Timeline Display -->
+    <div class="timeline" id="timeline"></div>
+  </div>
+
+  <!-- Modal to Show Event Details -->
+  <div id="event-details" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeDetails()">&times;</span>
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+      <img id="modal-image" src="" alt="" />
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
