@@ -1,44 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chiku ❤️ Krishu - Our Memory Timeline</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="container">
-    <h1>Chiku ❤️ Krishu - Our Memory Timeline</h1>
+/* Gradient Background */
+body {
+  background: linear-gradient(to bottom right, #ff9a9e, #fad0c4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
 
-    <!-- Form to Add New Event -->
-    <form id="event-form">
-      <input type="text" id="event-title" placeholder="Event Title" required />
-      <input type="date" id="event-date" required />
-      <textarea id="event-description" placeholder="Description" required></textarea>
-      <input type="file" id="event-image" accept="image/*" required />
-      <button type="submit" class="add-btn"><i class="fas fa-plus"></i> Add Event</button>
-    </form>
+/* Centering Form & Timeline */
+.container {
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-    <!-- Timeline Display -->
-    <div class="timeline" id="timeline"></div>
-  </div>
+/* Form Styling */
+form input, form textarea, form button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
 
-  <!-- Modal to Show Event Details -->
-  <div id="event-details" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeDetails()">&times;</span>
-      <h2 id="modal-title"></h2>
-      <p id="modal-description"></p>
-      <img id="modal-image" src="" alt="" />
-    </div>
-  </div>
+/* Make Add Button More Visible */
+button {
+  background: #ff758c;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
 
-  <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js"></script>
-  
-  <script src="script.js"></script>
-</body>
-</html>
+button:hover {
+  background: #ff4757;
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modal img {
+  max-width: 100%;
+  border-radius: 10px;
+}
