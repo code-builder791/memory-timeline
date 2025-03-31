@@ -1,160 +1,44 @@
-<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chiku ❤️ Krishu - Our Memory Timeline</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Chiku ❤️ Krishu - Our Memory Timeline</h1>
 
-/* General Styling */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #fef6fb;
-  margin: 0;
-  padding: 20px;
-}
+    <!-- Form to Add New Event -->
+    <form id="event-form">
+      <input type="text" id="event-title" placeholder="Event Title" required />
+      <input type="date" id="event-date" required />
+      <textarea id="event-description" placeholder="Description" required></textarea>
+      <input type="file" id="event-image" accept="image/*" required />
+      <button type="submit" class="add-btn"><i class="fas fa-plus"></i> Add Event</button>
+    </form>
 
-h1 {
-  text-align: center;
-  color: #ff6b81;
-}
+    <!-- Timeline Display -->
+    <div class="timeline" id="timeline"></div>
+  </div>
 
-/* Form Styling */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
-}
+  <!-- Modal to Show Event Details -->
+  <div id="event-details" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeDetails()">&times;</span>
+      <h2 id="modal-title"></h2>
+      <p id="modal-description"></p>
+      <img id="modal-image" src="" alt="" />
+    </div>
+  </div>
 
-input, textarea, button {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-button {
-  background-color: #ff6b81;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #ff4f66;
-}
-
-/* Timeline Styling */
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.event {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  cursor: pointer;
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.2s;
-}
-
-.event:hover {
-  transform: scale(1.05);
-}
-
-.event img {
-  width: 50px;
-  height: 50px;
-  border-radius: 5px;
-  object-fit: cover;
-}
-
-.event-date {
-  color: #ff6b81;
-  font-weight: bold;
-}
-
-/* Modal Styling */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.7);
-=======
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  text-align: center;
-}
-
-.container {
-  max-width: 600px;
-  margin: auto;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
-
-.timeline {
-  margin-top: 20px;
-}
-
-.event {
-  padding: 10px;
-  background: #fff3cd;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.5);
->>>>>>> ac0653e (Updated memory timeline with Firebase integration)
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-<<<<<<< HEAD
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 90%;
-  max-width: 500px;
-  text-align: center;
-  position: relative;
-}
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-#modal-image {
-  width: 100%;
-  height: auto;
-  margin-top: 10px;
-  border-radius: 8px;
-=======
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
->>>>>>> ac0653e (Updated memory timeline with Firebase integration)
-}
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js"></script>
+  
+  <script src="script.js"></script>
+</body>
+</html>
