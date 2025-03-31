@@ -1,43 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Chiku ❤️ Krishu - Memory Timeline</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Timeline</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #D16BA5, #86A8E7, #5FFBF1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        input, select, textarea, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            background: #FF6B6B;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #E63946;
+        }
+
+        /* Hide unwanted modal if it exists */
+        .modal {
+            display: none !important;
+        }
+    </style>
 </head>
 <body>
-
-  <div class="container">
-    <h1>Chiku ❤️ Krishu - Memory Timeline</h1>
-
-    <!-- Form to Add New Event -->
-    <form id="event-form">
-      <input type="text" id="event-title" placeholder="Event Title" required />
-      <input type="date" id="event-date" required />
-      <textarea id="event-description" placeholder="Description" required></textarea>
-      <input type="file" id="event-image" accept="image/*" required />
-      <button type="submit">Add Date</button>
-    </form>
-
-    <!-- Timeline Display -->
-    <div class="timeline" id="timeline"></div>
-  </div>
-
-  <!-- Modal to Show Event Details -->
-  <div id="event-details" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeDetails()">&times;</span>
-      <h2 id="modal-title"></h2>
-      <p id="modal-description"></p>
-      <img id="modal-image" src="" alt="" />
+    <div class="container">
+        <h1>Chiku ❤️ Krishu - Memory Timeline</h1>
+        <input type="text" placeholder="Event Title">
+        <select>
+            <option>Select Category</option>
+            <option>Birthday</option>
+            <option>Anniversary</option>
+            <option>Special Day</option>
+        </select>
+        <textarea placeholder="Description"></textarea>
+        <input type="file">
+        <button>Add Memory</button>
     </div>
-  </div>
-
-  <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-database.js"></script>
-  
-  <script src="script.js"></script>
 </body>
 </html>
