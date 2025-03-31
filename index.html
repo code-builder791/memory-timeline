@@ -7,7 +7,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom right, #D16BA5, #86A8E7, #5FFBF1);
+            background: url('https://raw.githubusercontent.com/code-builder791/memory-timeline/main/WhatsApp%20Image%202025-03-31%20at%2014.11.11_43902799.jpg') no-repeat center center fixed;
+            background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -16,7 +17,7 @@
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.9);
+            background: white;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -28,9 +29,10 @@
         h1 {
             font-size: 24px;
             margin-bottom: 15px;
+            font-family: 'Brush Script MT', cursive;
         }
 
-        input, select, textarea, button {
+        input, textarea, button {
             width: 100%;
             margin: 10px 0;
             padding: 10px;
@@ -59,14 +61,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>Chiku ❤️ Krishu - Memory Timeline</h1>
+        <h1>Chiku ❤️ Krishu</h1>
         <input type="text" placeholder="Event Title">
-        <select>
-            <option>Select Category</option>
-            <option>Birthday</option>
-            <option>Anniversary</option>
-            <option>Special Day</option>
-        </select>
+        <input type="date" placeholder="Select Date">
         <textarea placeholder="Description"></textarea>
         <input type="file">
         <button>Add Memory</button>
