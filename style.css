@@ -43,6 +43,29 @@ button:hover {
   background: #ff4757;
 }
 
+/* Timeline Event Styling */
+.timeline {
+  width: 90%;
+  max-width: 600px;
+  margin-top: 20px;
+  overflow-y: auto;
+  max-height: 300px;
+  padding: 15px;
+}
+
+.event {
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.event:hover {
+  background: #f1f1f1;
+}
+
 /* Modal Styling */
 .modal {
   display: none;
@@ -62,6 +85,8 @@ button:hover {
   padding: 20px;
   border-radius: 10px;
   text-align: center;
+  width: 90%;
+  max-width: 500px;
 }
 
 .modal img {
