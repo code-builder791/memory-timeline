@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Timeline</title>
     
-    <!-- Add this Favicon line here -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <style>
@@ -14,7 +14,7 @@
             background: url('https://raw.githubusercontent.com/code-builder791/memory-timeline/main/WhatsApp%20Image%202025-03-31%20at%2014.11.11_43902799.jpg') no-repeat center center fixed;
             background-size: cover;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             height: 100vh;
             margin: 0;
@@ -57,20 +57,28 @@
             background: #E63946;
         }
 
-        /* Hide unwanted modal if it exists */
-        .modal {
-            display: none !important;
+        .timeline {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 400px;
+            margin-top: 20px;
+            overflow-y: auto;
+            max-height: 300px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Chiku ❤️ Krishu</h1>
-        <input type="text" placeholder="Event Title">
-        <input type="date" placeholder="Select Date">
-        <textarea placeholder="Description"></textarea>
-        <input type="file">
-        <button>Add Memory</button>
+        <input type="text" id="event-title" placeholder="Event Title">
+        <input type="date" id="event-date">
+        <textarea id="event-description" placeholder="Description"></textarea>
+        <button id="add-memory">Add Memory</button>
     </div>
+    <div id="timeline" class="timeline"></div>
+    <script src="script.js"></script>
 </body>
 </html>

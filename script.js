@@ -47,6 +47,11 @@ onValue(ref(database, "events"), (snapshot) => {
         const event = childSnapshot.val();
         const eventElement = document.createElement("div");
         eventElement.classList.add("event");
+        eventElement.style.border = "1px solid #ccc";
+        eventElement.style.padding = "10px";
+        eventElement.style.margin = "10px 0";
+        eventElement.style.borderRadius = "5px";
+        eventElement.style.background = "#f9f9f9";
         eventElement.innerHTML = `<strong>${event.title}</strong><br>${event.date}<br>${event.description}`;
         timeline.appendChild(eventElement);
     });
